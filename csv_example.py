@@ -47,3 +47,10 @@ with open('dictwriter.csv', 'w', encoding="utf8", newline='') as f:
     writer.writeheader()
     for d in data:
         writer.writerow(d)
+
+
+with open('file.csv', encoding="utf8") as csvfile, open('file2.csv', 'w', encoding="utf8", newline='') as f:
+    reader = csv.reader(csvfile, delimiter=';')
+    writer = csv.writer(f, delimiter=';')
+    for row in reader:
+        writer.writerow(row)
